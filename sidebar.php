@@ -4,6 +4,9 @@ if(!isset($_GET['modul'])){
 }else{
     $modul = $_GET['modul'];
 }
+
+$hak_akses = isset($_SESSION['hak_akses']) ? $_SESSION['hak_akses'] : '';
+
 ?>
 <ul class="nav nav-pills flex-column ms-2">
     <li class="nav-item">
@@ -16,6 +19,16 @@ if(!isset($_GET['modul'])){
     <i class="bi bi-database-fill-gear me-2"></i></i>Data akun
 </a>
 </li>
+
+<?php if ($hak_akses == 'admin' || $hak_akses == 'pimpinan'): ?>
+<li class="nav-item">
+    <a href="?modul=pengguna" class="nav-link text-white <?= $modul=='pengguna'?'active':''; ?>">
+    <i class="bi bi-person-fill me-2"></i> Pengguna
+</a>
+</li>
+<?php endif; ?>
+
+<?php if ($hak_akses == 'admin' || $hak_akses == 'karyawan'): ?>
 <li class="nav-item">
     <a href="#transaksiCollapse" data-bs-toggle="collapse" aria-expanded="false" class="nav-link d-flex text-white">
     <i class="bi bi-cash-stack me-2"></i>
@@ -44,20 +57,21 @@ if(!isset($_GET['modul'])){
         <li class="nav-item">
             <a href="?modul=pelanggan" class="nav-link text-dark text-decoration-none <?= $modul=='pelanggan'?'active':''; ?>">Pelanggan</a>
         </li>
-        class="nav-item">
+        <li class="nav-item">
         <a href="?modul=barang" class="nav-link text-dark text-decoration-none <?= $modul=='barang'?'active':''; ?>">Barang</a>
-    </li>
-    <li class="nav-item">
+        </li>
+        <li class="nav-item">
         <a href="?modul=suplier" class="nav-link text-dark text-decoration-none <?= $modul=='suplier'?'active':''; ?>">Suplier</a>
-    </li>
-    <li class="nav-item">
-        <a href="?modul=pengguna" class="nav-link text-dark text-decoration-none <?= $modul=='pengguna'?'active':''; ?>">Pengguna</a>
     </li>
 </ul>
 </li>
+<?php endif; ?>
+
+<?php if ($hak_akses == 'admin' || $hak_akses == 'pimpinan'): ?>
 <li class="nav-item">
     <a href="?modul=jurnal" class="nav-link text-white <?=$modul=='jurnal'?'active':''; ?>">
     <i class="bi bi-clipboard2-data-fill me-2"></i>Jurnal Umum
 </a>
 </li>
+<?php endif; ?>
 </ul>

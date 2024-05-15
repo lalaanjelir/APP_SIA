@@ -10,12 +10,12 @@ $query = "INSERT INTO tbl_pengguna (
     hak_akses
     )
     VALUES (
-        'admin',
+        'pimpinan',
         '$password',
-        'Administrator Web',
-        'admin@gmail.com',
-        'Administrator',
-        'admin'
+        'pimpinan',
+        'pimpinan@gmail.com',
+        'pimpinan',
+        'pimpinan'
         )
         ";
         if($koneksi->query($query)){
