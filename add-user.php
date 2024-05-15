@@ -12,10 +12,10 @@ $query = "INSERT INTO tbl_pengguna (
     VALUES (
         'pimpinan',
         '$password',
-        'pimpinan',
+        'Pimpinan',
         'pimpinan@gmail.com',
-        'pimpinan',
-        'pimpinan'
+        'Pimpinan',
+        'Pimpinan'
         )
         ";
         if($koneksi->query($query)){
