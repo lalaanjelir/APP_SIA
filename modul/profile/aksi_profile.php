@@ -1,9 +1,9 @@
 <?php
 if(isset($_POST['submit'])){
     session_start();
-    include_once('../../konkesi.php');
+    include_once('../../koneksi.php');
     $username = $_POST['username'];
-    $nama_lengkap = $_POST['username'];
+    $nama_lengkap = $_POST['nama_lengkap'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $password_baru = $_POST['password_baru'];
@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
         header('location:../../dashboard.php?modul=profile');
        }else{
         $_SESSION['pesan'] = "Data profile gagal diperbaharui";
-        header('location:../../dashboard.php?modul=profilr');
+        header('location:../../dashboard.php?modul=profile');
        }
     }else{
         $query = "SELECT * FROM tbl_pengguna WHERE username='$username'";

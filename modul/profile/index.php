@@ -1,4 +1,5 @@
 <?php
+require_once ('koneksi.php');
 $query = "SELECT * FROM tbl_pengguna WHERE username='$_SESSION[username]'";
 $exec = mysqli_query($koneksi, $query);
 $data = mysqli_fetch_array($exec);
@@ -44,7 +45,7 @@ $data = mysqli_fetch_array($exec);
                         }
                         ?>
                         </span>
-                        <button type="submit" name="submit" class="btn btnprimary">Perbaharui</button>
+                        <button type="submit" name="submit" class="btn btn-primary">Perbaharui</button>
                     </div>
                 </form>
             </div>
