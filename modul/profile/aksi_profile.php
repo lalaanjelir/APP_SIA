@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['submit'])){
     session_start();
-    include_once('../../koneksi.php');
+    include_once('../../konkesi.php');
     $username = $_POST['username'];
     $nama_lengkap = $_POST['nama_lengkap'];
     $email = $_POST['email'];
