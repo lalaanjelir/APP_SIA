@@ -1,3 +1,6 @@
+<?php
+    require_once ('koneksi.php');
+    ?>
 <div class="card">
     <div class="card-body">
     <form action="modul/akun/aksi_pengguna.php?act=insert" method="post">
@@ -32,8 +35,9 @@
                         unset($_SESSION['pesan']);
                     }
                     ?>
-                <button class="btn btn-secondary" type="reset">Reset</button>
-                <button class="btn btn-primary" type="submit">Simpan</button>
+                    </span>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
             </div>
         </div>
         <div class="card">
@@ -71,9 +75,9 @@
                             <a href="#editPengguna<?= $data['id'] ?>" class="text-decoration-none"data-bs-toggle="modal">
                             <i class="bi bi-pencil-square text-success"></i>
                         </a>
-                        <a href="modul/pengguna/aksi_pengguna.php?act=delete&id=<?=$data['id'] ?>" class="text-decoration-none">
-                        <i class="bi bi-trash text-danger"></i>
-                    </a>
+                           <a href="modul/pengguna/aksi_pengguna.php?act=delete&id=<?=$data['id'] ?>" class="text-decoration-none">
+                           <i class="bi bi-trash text-danger"></i>
+                        </a>
                 </td>
                 <!-- Modal -->
                 <div class="modal fade" id="editPengguna<?= $data['id'] ?>" tabindex="-1"
@@ -88,13 +92,11 @@
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="username" class="form-label">Username</label>
-                                    <input type="text" class="form-control" name="username" 
-                                    value="<?= $data['username']; ?>" readonly>
+                                    <input type="text" class="form-control" name="username" value="<?= $data['username']; ?>" readonly>
                                 </div>
                                 <div class="mb-3">
                                     <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                    <input type="text" class="form-control" name="nama_lengkap" 
-                                    value="<?= $data['nama_lengkap']; ?>">
+                                    <input type="text" class="form-control" name="nama_lengkap" value="<?= $data['nama_lengkap']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password</label>
@@ -103,18 +105,15 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="jabatan" class="form-label">jabatan</label>
-                                    <input type="text" class="form-control" name="jabatan" 
-                                    value="<?= $data['jabatan']; ?>">
+                                    <input type="text" class="form-control" name="jabatan"value="<?= $data['jabatan']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="text" class="form-control" name="email" 
-                                    value="<?= $data['email']; ?>">
+                                    <input type="text" class="form-control" name="email" value="<?= $data['email']; ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="hak_akses" class="form-label">Hak Akses</label>
-                                    <input type="text" class="form-control" name="hak_akses" 
-                                    value="<?= $data['hak_akses']; ?>">
+                                    <input type="text" class="form-control" name="hak_akses" value="<?= $data['hak_akses']; ?>">
                                 </div>
                             </div>
                             <div class="modal-footer">
