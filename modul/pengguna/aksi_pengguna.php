@@ -1,6 +1,6 @@
 <?php
-include_once "../../koneksi.php";
-session_start();
+    session_start();
+    include_once('../../koneksi.php');
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     if($_GET['act']=="insert"){
         $username = $_POST['username'];

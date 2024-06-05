@@ -1,3 +1,6 @@
+<?php
+    require_once ('koneksi.php');
+    ?>
 <div class="card">
     <div class="card-body">
     <form action="modul/akun/aksi_pengguna.php?act=insert" method="post">
@@ -24,14 +27,14 @@
         <hr>
         <div class="row">
         <div class="d-flex">
-            <div class="col text-end">
-            <span class="me-auto text-fray">
+            <span class="me-auto text-gray">
                     <?php
                     if(isset($_SESSION['pesan'])){
                         echo $_SESSION['pesan'];
                         unset($_SESSION['pesan']);
                     }
                     ?>
+                    </span>
                 <button class="btn btn-secondary" type="reset">Reset</button>
                 <button class="btn btn-primary" type="submit">Simpan</button>
             </div>
