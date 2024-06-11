@@ -27,7 +27,6 @@ include_once('../../koneksi.php');
             $_SESSION['pesan'] = "Data supplier gagal diubah";
             header('location:../../dashboard.php?modul=suplier');
         }
-         echo "update";
         }
     }
     else{

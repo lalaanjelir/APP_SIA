@@ -3,11 +3,11 @@
     ?>
 <div class="card mb-3">
    <div class="card-body">
-    <form action="modul/akun/aksi_suplier.php?act=insert" method="post">
+    <form action="modul/suplier/aksi_suplier.php?act=insert" method="post">
         <div class="row">
             <div class="mb-3 col-md-6">
-                <label for="nama_suplier" class="form-label">Nama suplier</label>
-                <input type="text" class="form-control" name="nama_suplier">
+                <label for="nama_supplier" class="form-label">Nama suplier</label>
+                <input type="text" class="form-control" name="nama_supplier">
             </div>
             <div class="mb-3 col-md-6">
                 <label for="alamat" class="form-label">Alamat</label>
