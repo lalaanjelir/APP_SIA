@@ -29,8 +29,11 @@ require_once('koneksi.php')
                     </div>
                     <div class="mb-3 col-md-6">
                         <label for="hak_akses" class="form-label">Hak Akses</label>
-                        <input type="text" class="form-control" name="hak_akses" required>
-                        
+                        <select class="form-select" name="hak_akses" required>
+                        <option value="admin">Admin</option>
+                        <option value="pimpinan">Pimpinan</option>
+                        <option value="karyawan">Karyawan</option>
+</select>
                     </div>
                 </div>
                 <hr class="text-secondary">
@@ -124,15 +127,15 @@ require_once('koneksi.php')
                                 <div class="mb-3">
                                     <label for="hak_akses" class="form-label">Hak Akses</label>
                                     <select class="form-select" name="hak_akses" required>
-                                        <option value="admin" <?= $data['$hak_akses'] == 'admin' ? 'selected' : ''; ?>>Admin</option>
-                                        <option value="pimpinan" <?= $data['$hak_akses'] == 'pimpinan' ? 'selected' : ''; ?>>Pimpinan</option>
-                                        <option value="karyawan" <?= $data['$hak_akses'] == 'admin' ? 'selected' : ''; ?>>Karyawan</option>
+                                        <option value="admin" <?= $data['hak_akses'] == 'admin' ? 'selected' : ''; ?>>admin</option>
+                                        <option value="pimpinan" <?= $data['hak_akses'] == 'pimpinan' ? 'selected' : ''; ?>>pimpinan</option>
+                                        <option value="karyawan" <?= $data['hak_akses'] == 'admin' ? 'selected' : ''; ?>>karyawan</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs dismiss="modal">Close</button>
-                                <button type="submit" name="submit" class="btn btn primary">Simpan</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
                             </div>
                         </div>
                     </div>
